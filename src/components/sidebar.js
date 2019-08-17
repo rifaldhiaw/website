@@ -59,7 +59,7 @@ const Sidebar = () => {
       icon: faGithub,
     },
     {
-      link: "mailto: rifaldhiaw@gmail.com",
+      link: "mailto:rifaldhiaw@gmail.com",
       icon: faEnvelope,
     },
   ]
