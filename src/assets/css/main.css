@@ -1,0 +1,42 @@
+/* @tailwind base; */
+
+@tailwind components;
+
+@tailwind utilities;
+
+.yellow-square {
+  width: 350px;
+  height: 350px;
+  background-image: linear-gradient(
+    to right bottom,
+    #ffdb20,
+    #ffd636,
+    #ffd146,
+    #ffcd54,
+    #ffc960
+  );
+  -webkit-box-shadow: 8px 15px 50px -27px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 8px 15px 50px -27px rgba(0, 0, 0, 0.75);
+  box-shadow: 8px 15px 50px -27px rgba(0, 0, 0, 0.75);
+  position: relative;
+}
+
+.logo-rifaldhi {
+  font-family: "Playfair Display";
+  font-weight: normal;
+  font-size: 110px;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  margin: 0;
+}
+
+.logo-aw {
+  font-family: "Playfair Display";
+  font-size: 170px;
+  font-weight: normal;
+  position: absolute;
+  top: 130px;
+  left: 30px;
+  margin: 0;
+}

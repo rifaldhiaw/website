@@ -3,68 +3,40 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 import { rhythm, scale } from "../utils/typography"
+import Sidebar from "./sidebar"
 
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    const blogPath = `${__PATH_PREFIX__}/blog/`
     let header
 
-    if (location.pathname === rootPath || location.pathname === blogPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={location.pathname === blogPath ? `/blog/` : `/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/blog/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
+    header = (
+      <h1 className="text-5xl my-0">
+        <Link className="text-black" to={`/`}>
+          {title}
+        </Link>
+      </h1>
+    )
+
     return (
       <Wrapper>
         <div
           style={{
             marginLeft: `auto`,
             marginRight: `auto`,
-            maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            maxWidth: `1300px`,
+            padding: `${rhythm(1)} ${rhythm(3 / 4)}`,
           }}
         >
-          <header>{header}</header>
-          <main>{children}</main>
+          <div className="flex">
+            <div className="w-3/12 px-5 py-2">
+              <header>{header}</header>
+              <Sidebar></Sidebar>
+            </div>
+            <div className="w-9/12 px-6 py-2">
+              <main>{children}</main>
+            </div>
+          </div>
         </div>
         <Footer>
           © {new Date().getFullYear()}, Built with
