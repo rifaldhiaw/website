@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Widget from "../components/Widget"
+import Widget from "../components/widget"
 
 import VanillaTilt from "vanilla-tilt"
 
