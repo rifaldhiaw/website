@@ -2,12 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import Sidebar from "./sidebar"
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
+    const { title, children } = this.props
     let header
 
     header = (
@@ -29,20 +29,15 @@ class Layout extends React.Component {
           }}
         >
           <div className="flex">
-            <div className="w-3/12 px-5 py-2">
+            <div className="w-3/12 px-5 pt-5">
               <header>{header}</header>
               <Sidebar></Sidebar>
             </div>
-            <div className="w-9/12 px-6 py-2">
+            <div className="w-9/12 px-6 pt-5">
               <main>{children}</main>
             </div>
           </div>
         </div>
-        <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Footer>
       </Wrapper>
     )
   }
@@ -50,11 +45,6 @@ class Layout extends React.Component {
 
 const Wrapper = styled.div`
   min-height: 100vh;
-`
-
-const Footer = styled.footer`
-  text-align: center;
-  margin: 24px;
 `
 
 export default Layout

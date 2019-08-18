@@ -85,7 +85,7 @@ const Sidebar = () => {
           return (
             <>
               <LinkIcon icon={val.icon} link={val.link} key={index}></LinkIcon>
-              {index == 1 && <br />}
+              {index === 1 && <br />}
             </>
           )
         })}
@@ -116,6 +116,7 @@ const LinkIcon = ({ icon, link }) => {
         className="bg-yellow-400 text-black rounded text-center py-2 px-3"
         href={link}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <FontAwesomeIcon icon={icon} className="" />
       </a>
