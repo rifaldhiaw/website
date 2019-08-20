@@ -2,23 +2,26 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const AboutPage = ({ location, data }) => {
+const ProjectPage = ({ location, data }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+      <SEO
+        title="Project"
+        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+      />
       <div className="w-full md:w-3/4">
-        <h2>About me</h2>
+        <h2>My Projects</h2>
         <p>- Page is Under Development -</p>
       </div>
     </Layout>
   )
 }
 
-export default AboutPage
+export default ProjectPage
 
-export const aboutPageQuery = graphql`
+export const projectPageQuery = graphql`
   query {
     site {
       siteMetadata {

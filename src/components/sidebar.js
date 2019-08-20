@@ -30,17 +30,17 @@ const Sidebar = () => {
     },
     {
       name: "About",
-      link: "/#",
+      link: "/about",
       icon: faUser,
     },
     {
       name: "Project",
-      link: "/#",
+      link: "/project",
       icon: faTh,
     },
     {
       name: "Contact",
-      link: "/#",
+      link: "/contact",
       icon: faPhoneSquare,
     },
   ]
