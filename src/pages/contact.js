@@ -41,7 +41,7 @@ const ContactPage = ({ location, data }) => {
         title="Contact me"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
-      <div className="w-full md:w-3/4">
+      <div className="w-full xl:w-3/4">
         <h2>Contact me</h2>
         <section>
           <p className="mb-3">
@@ -69,6 +69,7 @@ const ContactPage = ({ location, data }) => {
         <section className="mt-8">
           <p>Or u can just simply use form below to contact me:</p>
           <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-wrap">
               <div className="w-full md:w-1/2 px-2">
                 <label

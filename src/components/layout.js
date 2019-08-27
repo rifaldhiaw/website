@@ -29,11 +29,14 @@ class Layout extends React.Component {
           }}
         >
           <div className="flex">
-            <div className="w-3/12 px-5 pt-5">
+            <div
+              className="px-5 pt-5 hidden lg:block"
+              style={{ width: "250px" }}
+            >
               <header>{header}</header>
               <Sidebar></Sidebar>
             </div>
-            <div className="w-9/12 px-6 pt-5">
+            <div className="px-2 md:px-6 pt-5">
               <main>{children}</main>
             </div>
           </div>

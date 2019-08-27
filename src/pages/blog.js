@@ -24,37 +24,35 @@ class Blog extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <div className="flex flex-wrap">
-          <div className="w-2/3 pr-5">
-            <div style={{ margin: "20px 0 40px" }}>
-              {posts.map(({ node }) => {
-                const title = node.frontmatter.title || node.fields.slug
-                return (
-                  <div key={node.fields.slug}>
-                    <h3
-                      style={{
-                        marginBottom: rhythm(1 / 4),
-                      }}
+          <div className="w-full md:w-2/3 pr-5">
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug
+              return (
+                <div key={node.fields.slug}>
+                  <h3
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                    }}
+                  >
+                    <Link
+                      style={{ boxShadow: `none` }}
+                      to={`blog${node.fields.slug}`}
                     >
-                      <Link
-                        style={{ boxShadow: `none` }}
-                        to={`blog${node.fields.slug}`}
-                      >
-                        {title}
-                      </Link>
-                    </h3>
-                    <small>{node.frontmatter.date}</small>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description || node.excerpt,
-                      }}
-                    />
-                  </div>
-                )
-              })}
-            </div>
+                      {title}
+                    </Link>
+                  </h3>
+                  <small>{node.frontmatter.date}</small>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  />
+                </div>
+              )
+            })}
           </div>
 
-          <div className="w-1/3 pt-10 px-5">
+          <div className="w-full md:w-1/3 md:pt-10 md:px-5 order-first md:order-last">
             <Widget title="Category">
               <ul className="ml-2 text-sm font-bold">
                 {tags.map(tag => {

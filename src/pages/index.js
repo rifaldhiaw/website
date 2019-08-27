@@ -21,17 +21,16 @@ const IndexPage = ({ location, data }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
       <div className="flex flex-wrap">
-        <div className="w-2/3 mt-20 md:pl-6">
-          <LogoAw />
-          <div
-            className="mt-8 text-xs font-playfair italic"
-            style={{ marginLeft: "15px" }}
-          >
+        <div className="w-full md:w-2/3 mt-0 lg:mt-20 pl-0 xl:pl-16">
+          <div className="logo-scale text-left">
+            <LogoAw />
+          </div>
+          <div className="mt-0 xl:mt-5 text-xs font-playfair italic text-center md:text-left ml-0 md:ml-5">
             <p>- The Key of Your Future is Always in Your Hand -</p>
           </div>
         </div>
 
-        <div className="w-1/3 pt-5">
+        <div className="w-full md:w-1/3 pt-5">
           <Widget title={summaryWidgetTitle}>
             A Developer who love learning and making trusted and maintainable
             code based on Jakarta, Indonesia
@@ -57,7 +56,7 @@ const LogoAw = () => {
       max: 15,
       speed: 500,
       glare: false,
-      scale: 1.3,
+      scale: 1.2,
     })
   })
 

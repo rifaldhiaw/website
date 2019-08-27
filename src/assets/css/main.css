@@ -4,6 +4,26 @@
 
 @tailwind utilities;
 
+.logo-scale {
+  transform: scale(0.6);
+}
+
+@screen sm {
+  .logo-scale {
+    transform: scale(0.7);
+  }
+}
+@screen lg {
+  .logo-scale {
+    transform: scale(0.8);
+  }
+}
+@screen xl {
+  .logo-scale {
+    transform: scale(1);
+  }
+}
+
 .yellow-square {
   width: 350px;
   height: 350px;
