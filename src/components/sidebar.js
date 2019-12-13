@@ -99,7 +99,7 @@ const MenuList = ({ link, icon, name, index }) => {
     <li className="list-none my-4" key={index}>
       <Link
         className="text-black rounded-full py-2 px-6 font-bold text-md no-underline hover:bg-yellow-200"
-        activeClassName="rounded-full bg-yellow-200 py-2 px-6"
+        activeClassName="text-link py-2 px-6"
         to={link}
       >
         <FontAwesomeIcon icon={icon} className="mr-3" />
