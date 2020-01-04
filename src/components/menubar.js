@@ -93,7 +93,7 @@ const MenuList = ({ link, icon, name }) => {
         activeClassName="border-solid border-0 border-b-4 border-yellow-400"
         to={link}
       >
-        <FontAwesomeIcon icon={icon} className="mr-3" />
+        <FontAwesomeIcon icon={icon} className="text-sm mr-3" />
         {name}
       </Link>
     </li>
@@ -109,7 +109,7 @@ const LinkIcon = ({ icon, link }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FontAwesomeIcon icon={icon} className="" />
+        <FontAwesomeIcon icon={icon} className="text-md" />
       </a>
     </div>
   )

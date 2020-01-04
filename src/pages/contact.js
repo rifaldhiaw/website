@@ -1,4 +1,6 @@
 import React from "react"
+import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -111,9 +113,12 @@ const ContactPage = ({ location, data }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div className="flex pl-8 items-center h-8 text-black text-sm border-solid border-0 border-l-2 border-yellow-400 bg-yellow-200 hover:bg-yellow-400">
+                  <div className="flex pl-4 items-center h-8 text-black text-sm border-solid border-0 border-l-4 border-yellow-400 bg-yellow-200 hover:bg-yellow-400">
                     <div>
-                      <FontAwesomeIcon icon={contact.icon} />
+                      <FontAwesomeIcon
+                        icon={contact.icon}
+                        className="text-md"
+                      />
                       <span className="ml-4">{contact.name}</span>
                     </div>
                   </div>
