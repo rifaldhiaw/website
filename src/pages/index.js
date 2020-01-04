@@ -26,7 +26,7 @@ const IndexPage = ({ location, data }) => {
         </div>
 
         <div className="w-full md:w-1/2 pt-5">
-          <Widget title="A Web Developer" useBorder={true}>
+          <Widget title="I am a Web Developer" useBorder={true}>
             <p className="text-sm">
               who love learning, write a maintainable code yet love observing
               and appreciate the value of a good design, based on Jakarta,
@@ -93,8 +93,7 @@ const RecentPostList = ({ node }) => {
         <div>
           <Link to={`blog${node.fields.slug}`}>{title}</Link>
         </div>
-        {/* <small>{node.frontmatter.date}</small> */}
-        <p className="text-xs mb-3">{partDesc}</p>
+        <p className="text-xs mb-2">{partDesc}</p>
       </div>
     </div>
   )
