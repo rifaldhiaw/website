@@ -1,4 +1,6 @@
 import React from "react"
+import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -41,33 +43,9 @@ const ContactPage = ({ location, data }) => {
         title="Contact me"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
-      <div className="w-full xl:w-3/4">
-        <h2>Contact me</h2>
-        <section>
-          <p className="mb-3">
-            I am not the guy whos always active in social media, but sure I
-            still have them. Feel free to contact me via my social media.
-          </p>
-          <div className="flex flex-wrap">
-            {contactLink.map(contact => {
-              return (
-                <a
-                  className="w-full md:w-1/2 my-1"
-                  href={contact.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="bg-yellow-400 rounded-full mr-5 text-black px-4 py-1 text-sm hover:bg-yellow-200">
-                    <FontAwesomeIcon icon={contact.icon} />
-                    <span className="ml-4">{contact.name}</span>
-                  </div>
-                </a>
-              )
-            })}
-          </div>
-        </section>
-        <section className="mt-8">
-          <p>Or u can just simply use form below to contact me:</p>
+      <h2>Contact me</h2>
+      <div className="flex mt-8">
+        <section className="w-full xl:w-3/4 xl:pr-8">
           <form name="contact" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-wrap">
@@ -124,6 +102,30 @@ const ContactPage = ({ location, data }) => {
               </button>
             </div>
           </form>
+        </section>
+        <section className="w-full xl:w-1/4 mt-4">
+          <div className="flex flex-wrap">
+            {contactLink.map(contact => {
+              return (
+                <a
+                  className="w-full my-4"
+                  href={contact.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="flex pl-4 items-center h-8 text-black text-sm border-solid border-0 border-l-4 border-yellow-400 bg-yellow-200 hover:bg-yellow-400">
+                    <div>
+                      <FontAwesomeIcon
+                        icon={contact.icon}
+                        className="text-md"
+                      />
+                      <span className="ml-4">{contact.name}</span>
+                    </div>
+                  </div>
+                </a>
+              )
+            })}
+          </div>
         </section>
       </div>
     </Layout>
