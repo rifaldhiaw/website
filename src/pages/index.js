@@ -11,32 +11,30 @@ const IndexPage = ({ location, data }) => {
   const posts = data.allMarkdownRemark.edges
 
   const siteTitle = "Rifaldhi AW"
-  const summaryWidgetTitle = (
-    <>
-      Hello there, <br />I am Rifaldhi AW
-    </>
-  )
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
       <div className="flex flex-wrap">
-        <div className="w-full md:w-2/3 mt-0 lg:mt-20 pl-0 xl:pl-16">
-          <div className="logo-scale text-left">
+        <div className="w-full md:w-1/2 mt-0 lg:mt-10 pl-0 xl:pl-16">
+          <div className="logo-scale text-center">
             <LogoAw />
           </div>
-          <div className="mt-0 xl:mt-5 text-xs font-playfair italic text-center md:text-left ml-0 md:ml-5">
+          <div className="mt-0 xl:mt-16 text-xs font-playfair italic text-center md:text-left">
             <p>- The Key of Your Future is Always in Your Hand -</p>
           </div>
         </div>
 
-        <div className="w-full md:w-1/3 pt-5">
-          <Widget title={summaryWidgetTitle}>
-            A Developer who love learning and making trusted and maintainable
-            code based on Jakarta, Indonesia
+        <div className="w-full md:w-1/2 pt-5">
+          <Widget title="A Web Developer" useBorder={true}>
+            <p className="text-sm">
+              who love learning, write a maintainable code yet love observing
+              and appreciate the value of a good design, based on Jakarta,
+              Indonesia
+            </p>
           </Widget>
-          <Widget title="Recent Posts">
-            <div className="bg-yellow-200 w-full rounded-lg p-5 overflow-y-auto">
+          <Widget title="Recent Posts" className="mt-16 h-64 overflow-y-auto">
+            <div className="w-full overflow-y-auto">
               <ul className="m-0">
                 {posts.map(({ node }) => {
                   return <RecentPostList node={node} />
@@ -86,15 +84,18 @@ const RecentPostList = ({ node }) => {
     ? node.frontmatter.description
     : node.excerpt
 
-  const partDesc = desc ? desc.substring(0, 70) + " ..." : ""
+  const partDesc = desc ? desc.substring(0, 150) + " ..." : ""
 
   return (
-    <div key={node.fields.slug}>
+    <div key={node.fields.slug} className="flex">
+      <div className="h-3 w-3 rounded-full bg-yellow-400 mt-3 mr-5" />
       <div>
-        <Link to={`blog${node.fields.slug}`}>{title}</Link>
+        <div>
+          <Link to={`blog${node.fields.slug}`}>{title}</Link>
+        </div>
+        {/* <small>{node.frontmatter.date}</small> */}
+        <p className="text-xs mb-3">{partDesc}</p>
       </div>
-      <small>{node.frontmatter.date}</small>
-      <p className="text-xs mb-3">{partDesc}</p>
     </div>
   )
 }
@@ -105,7 +106,7 @@ export const indexPageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 2
+      limit: 3
     ) {
       edges {
         node {
@@ -114,7 +115,6 @@ export const indexPageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
             description
           }
