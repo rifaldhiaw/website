@@ -7,7 +7,6 @@ import {
   faUser,
   faTh,
   faPhoneSquare,
-  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons"
 
 import {
