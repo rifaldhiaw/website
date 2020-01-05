@@ -60,12 +60,14 @@
   }
 
   .logo-rifaldhi {
-    font-size: 100px;
+    font-size: 98px;
+    left: 25px;
   }
 
   .logo-aw {
     font-size: 150px;
     top: 120px;
+    left: 35px;
   }
 
   .motto-width {
@@ -84,12 +86,14 @@
   }
 
   .logo-rifaldhi {
-    font-size: 110px;
+    font-size: 106px;
+    left: 30px;
   }
 
   .logo-aw {
     font-size: 170px;
-    top: 130px;
+    left: 40px;
+    top: 120px;
   }
 
   .motto-width {
