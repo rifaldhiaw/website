@@ -15,54 +15,54 @@ import {
   faGithub,
 } from "@fortawesome/free-brands-svg-icons"
 
+const menu = [
+  {
+    name: "Home",
+    link: "/",
+    icon: faHome,
+  },
+  {
+    name: "Blog",
+    link: "/blog",
+    icon: faPenSquare,
+  },
+  {
+    name: "About",
+    link: "/about",
+    icon: faUser,
+  },
+  {
+    name: "Project",
+    link: "/project",
+    icon: faTh,
+  },
+  {
+    name: "Contact",
+    link: "/contact",
+    icon: faPhoneSquare,
+  },
+]
+
+const iconLink = [
+  {
+    link: "https://twitter.com/rifaldhiaw",
+    icon: faTwitter,
+  },
+  {
+    link: "https://www.instagram.com/rifaldhiaw/",
+    icon: faInstagram,
+  },
+  {
+    link: "https://github.com/rifaldhiaw/",
+    icon: faGithub,
+  },
+]
+
 const Menubar = () => {
-  const menu = [
-    {
-      name: "Home",
-      link: "/",
-      icon: faHome,
-    },
-    {
-      name: "Blog",
-      link: "/blog",
-      icon: faPenSquare,
-    },
-    {
-      name: "About",
-      link: "/about",
-      icon: faUser,
-    },
-    {
-      name: "Project",
-      link: "/project",
-      icon: faTh,
-    },
-    {
-      name: "Contact",
-      link: "/contact",
-      icon: faPhoneSquare,
-    },
-  ]
-
-  const iconLink = [
-    {
-      link: "https://twitter.com/rifaldhiaw",
-      icon: faTwitter,
-    },
-    {
-      link: "https://www.instagram.com/rifaldhiaw/",
-      icon: faInstagram,
-    },
-    {
-      link: "https://github.com/rifaldhiaw/",
-      icon: faGithub,
-    },
-  ]
-
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between pt-2">
       <nav>
-        <ul className="flex mx-0">
+        <ul className="hidden sm:flex mx-0">
           {menu.map(val => {
             return <MenuList link={val.link} icon={val.icon} name={val.name} />
           })}
@@ -70,11 +70,13 @@ const Menubar = () => {
       </nav>
 
       <div className="flex">
-        {iconLink.map((val, index) => {
-          return <LinkIcon icon={val.icon} link={val.link} key={index} />
-        })}
+        <div className="hidden sm:block">
+          {iconLink.map((val, index) => {
+            return <LinkIcon icon={val.icon} link={val.link} key={index} />
+          })}
+        </div>
 
-        <div className="p-3">
+        <div className="pt-1 pb-3 px-3">
           <label className="switch">
             <input type="checkbox" />
             <span className="slider round" />
@@ -87,14 +89,14 @@ const Menubar = () => {
 
 const MenuList = ({ link, icon, name }) => {
   return (
-    <li className="list-none my-4" key={name}>
+    <li className="list-none mb-4" key={name}>
       <Link
         className="py-2 px-5 font-bold text-black text-sm border-solid border-0 border-b-4 border-transparent hover:border-yellow-400"
         activeClassName="border-solid border-0 border-b-4 border-yellow-400"
         to={link}
       >
-        <FontAwesomeIcon icon={icon} className="text-sm mr-3" />
-        {name}
+        <FontAwesomeIcon icon={icon} className="text-sm lg:mr-3" />
+        <span className="hidden lg:inline">{name}</span>
       </Link>
     </li>
   )
@@ -102,7 +104,7 @@ const MenuList = ({ link, icon, name }) => {
 
 const LinkIcon = ({ icon, link }) => {
   return (
-    <div className="m-3 inline-block">
+    <div className="mb-3 mx-1 lg:mx-2 inline-block">
       <a
         className="text-black text-center py-2 px-3"
         href={link}

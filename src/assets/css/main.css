@@ -1,32 +1,16 @@
 /* purgecss start ignore */
-@tailwind  components;
+@tailwind components;
 /* purgecss end ignore */
 
 @tailwind utilities;
 
-.logo-scale {
-  transform: scale(0.6);
-}
-
-@screen sm {
-  .logo-scale {
-    transform: scale(0.7);
-  }
-}
-@screen lg {
-  .logo-scale {
-    transform: scale(0.8);
-  }
-}
-@screen xl {
-  .logo-scale {
-    transform: scale(1.1);
-  }
+.logo-wrapper {
+  width: 230px;
 }
 
 .yellow-square {
-  width: 350px;
-  height: 350px;
+  width: 200px;
+  height: 200px;
   background-image: linear-gradient(
     to right bottom,
     #ffdb20,
@@ -44,21 +28,73 @@
 .logo-rifaldhi {
   font-family: "Playfair Display";
   font-weight: normal;
-  font-size: 110px;
+  font-size: 62px;
   position: absolute;
-  left: 30px;
-  top: 30px;
+  left: 15px;
+  top: 15px;
   margin: 0;
 }
 
 .logo-aw {
   font-family: "Playfair Display";
-  font-size: 170px;
+  font-size: 90px;
   font-weight: normal;
   position: absolute;
-  top: 130px;
-  left: 30px;
+  top: 80px;
+  left: 20px;
   margin: 0;
+}
+
+.motto-width {
+  width: 200px;
+}
+
+@screen md {
+  .logo-wrapper {
+    width: 370px;
+  }
+
+  .yellow-square {
+    width: 320px;
+    height: 320px;
+  }
+
+  .logo-rifaldhi {
+    font-size: 100px;
+  }
+
+  .logo-aw {
+    font-size: 150px;
+    top: 120px;
+  }
+
+  .motto-width {
+    width: 320px;
+  }
+}
+
+@screen xl {
+  .logo-wrapper {
+    width: 410px;
+  }
+
+  .yellow-square {
+    width: 350px;
+    height: 350px;
+  }
+
+  .logo-rifaldhi {
+    font-size: 110px;
+  }
+
+  .logo-aw {
+    font-size: 170px;
+    top: 130px;
+  }
+
+  .motto-width {
+    width: 350px;
+  }
 }
 
 .text-link {
