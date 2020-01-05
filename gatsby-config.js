@@ -67,9 +67,9 @@ module.exports = {
         name: `Rifaldhi AW`,
         short_name: `rifaldhiaw`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#ffc960`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
         // edit below
         icon: `content/assets/gatsby-icon.png`,
       },
