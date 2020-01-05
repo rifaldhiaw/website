@@ -18,7 +18,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <div className="w-full">
+        <div className="w-full lg:w-3/4 mx-auto">
           <h1>{post.frontmatter.title}</h1>
           <p
             style={{

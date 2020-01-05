@@ -60,17 +60,17 @@ const iconLink = [
 
 const Menubar = () => {
   return (
-    <div className="flex justify-between pt-2">
-      <nav>
-        <ul className="hidden sm:flex mx-0">
+    <div className="flex justify-between bg-white pt-2 z-10">
+      <nav className="w-full md:w-auto">
+        <ul className="flex justify-between mx-0 mb-0">
           {menu.map(val => {
             return <MenuList link={val.link} icon={val.icon} name={val.name} />
           })}
         </ul>
       </nav>
 
-      <div className="flex">
-        <div className="hidden sm:block">
+      <div className="hidden sm:flex sm:justify-end ">
+        <div>
           {iconLink.map((val, index) => {
             return <LinkIcon icon={val.icon} link={val.link} key={index} />
           })}
@@ -89,9 +89,9 @@ const Menubar = () => {
 
 const MenuList = ({ link, icon, name }) => {
   return (
-    <li className="list-none mb-4" key={name}>
+    <li className="list-none" key={name}>
       <Link
-        className="py-2 px-5 font-bold text-black text-sm border-solid border-0 border-b-4 border-transparent hover:border-yellow-400"
+        className="py-3 px-5 font-bold text-black text-sm border-solid border-0 border-b-4 border-transparent hover:border-yellow-400"
         activeClassName="border-solid border-0 border-b-4 border-yellow-400"
         to={link}
       >
