@@ -52,7 +52,7 @@ class Blog extends React.Component {
             })}
           </div>
 
-          <div className="w-full md:w-1/3 md:pt-10 md:px-5 order-first md:order-last">
+          <div className="w-full md:w-1/3 pt-10 md:px-5">
             <Widget title="Category">
               <ul className="ml-2 text-sm font-bold">
                 {tags.map(tag => {
@@ -80,7 +80,6 @@ class Blog extends React.Component {
 }
 
 const RandomPostList = ({ post }) => {
-  console.log(post)
   const title = post.frontmatter.title
     ? post.frontmatter.title
     : post.fields.slug

@@ -16,16 +16,11 @@ const IndexPage = ({ location, data }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
       <div className="flex flex-wrap">
-        <div className="w-full md:w-1/2 mt-0 lg:mt-10 pl-0 xl:pl-16">
-          <div className="logo-scale text-center">
-            <LogoAw />
-          </div>
-          <div className="mt-0 xl:mt-16 text-xs font-playfair italic text-center md:text-left">
-            <p>- The Key of Your Future is Always in Your Hand -</p>
-          </div>
+        <div className="w-full lg:w-1/2 my-10 pl-0 lg:pl-5 xl:pl-10 flex justify-center lg:justify-start">
+          <LogoAw />
         </div>
 
-        <div className="w-full md:w-1/2 pt-5">
+        <div className="w-full lg:w-1/2 pt-5">
           <Widget title="I am a Web Developer" useBorder={true}>
             <p className="text-sm">
               who love learning, write a maintainable code yet love observing
@@ -59,19 +54,24 @@ const LogoAw = () => {
   })
 
   return (
-    <div
-      className="yellow-square"
-      style={{
-        transformStyle: "preserve-3d",
-        transform: "perspective(1000px)",
-      }}
-    >
-      <h2 className="logo-rifaldhi" style={{ transform: "translateZ(30px)" }}>
-        Rifaldhi
-      </h2>
-      <h2 className="logo-aw" style={{ transform: "translateZ(60px)" }}>
-        AW
-      </h2>
+    <div className="logo-wrapper">
+      <div
+        className="yellow-square"
+        style={{
+          transformStyle: "preserve-3d",
+          transform: "perspective(1000px)",
+        }}
+      >
+        <h2 className="logo-rifaldhi" style={{ transform: "translateZ(30px)" }}>
+          Rifaldhi
+        </h2>
+        <h2 className="logo-aw" style={{ transform: "translateZ(60px)" }}>
+          AW
+        </h2>
+      </div>
+      <div className="motto-width mt-5 text-xs font-playfair italic text-center">
+        - The Key of Your Future is Always in Your Hand -
+      </div>
     </div>
   )
 }
@@ -84,7 +84,7 @@ const RecentPostList = ({ node }) => {
     ? node.frontmatter.description
     : node.excerpt
 
-  const partDesc = desc ? desc.substring(0, 150) + " ..." : ""
+  const partDesc = desc ? desc.substring(0, 100) + " ..." : ""
 
   return (
     <div key={node.fields.slug} className="flex">

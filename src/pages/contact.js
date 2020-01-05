@@ -44,8 +44,8 @@ const ContactPage = ({ location, data }) => {
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
       <h2>Contact me</h2>
-      <div className="flex mt-8">
-        <section className="w-full xl:w-3/4 xl:pr-8">
+      <div className="flex flex-wrap mt-8">
+        <section className="w-full lg:w-2/3 xl:w-3/4 lg:pr-6 xl:pr-8">
           <form name="contact" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="contact" />
             <div className="flex flex-wrap">
@@ -103,17 +103,17 @@ const ContactPage = ({ location, data }) => {
             </div>
           </form>
         </section>
-        <section className="w-full xl:w-1/4 mt-4">
+        <section className="w-full lg:w-1/3 xl:w-1/4 mt-4">
           <div className="flex flex-wrap">
             {contactLink.map(contact => {
               return (
                 <a
-                  className="w-full my-4"
+                  className="w-full md:w-1/2 lg:w-full my-2 lg:my-4 px-2"
                   href={contact.link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div className="flex pl-4 items-center h-8 text-black text-sm border-solid border-0 border-l-4 border-yellow-400 bg-yellow-200 hover:bg-yellow-400">
+                  <div className="flex items-center h-8 pl-4 text-black text-sm border-solid border-0 border-l-4 border-yellow-400 bg-yellow-200 hover:bg-yellow-400">
                     <div>
                       <FontAwesomeIcon
                         icon={contact.icon}
