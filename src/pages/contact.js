@@ -103,7 +103,7 @@ const ContactPage = ({ location, data }) => {
             </div>
           </form>
         </section>
-        <section className="w-full lg:w-1/3 xl:w-1/4 mt-4">
+        <section className="w-full lg:w-1/3 xl:w-1/4 mt-4 mb-10">
           <div className="flex flex-wrap">
             {contactLink.map(contact => {
               return (

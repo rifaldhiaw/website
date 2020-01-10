@@ -15,7 +15,7 @@ const IndexPage = ({ location, data }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mt-8 md:mt-10">
         <div className="w-full lg:w-1/2 my-10 pl-0 lg:pl-5 xl:pl-10 flex justify-center lg:justify-start">
           <LogoAw />
         </div>
