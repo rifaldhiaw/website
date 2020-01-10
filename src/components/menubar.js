@@ -58,18 +58,23 @@ const iconLink = [
   },
 ]
 
+const layout = "bg-white pt-0 md:pt-2 "
+const position =
+  "fixed bottom-0 w-full lg:static md:flex md:justify-between z-10 "
+const border = "border border-solid border-gray-400 md:border-none "
+
 const Menubar = () => {
   return (
-    <div className="flex justify-between bg-white pt-2 z-10">
+    <div className={layout + position + border}>
       <nav className="w-full md:w-auto">
-        <ul className="flex justify-between mx-0 mb-0">
+        <ul className="flex justify-around mx-0 mb-0">
           {menu.map(val => {
             return <MenuList link={val.link} icon={val.icon} name={val.name} />
           })}
         </ul>
       </nav>
 
-      <div className="hidden sm:flex sm:justify-end ">
+      <div className="hidden sm:flex sm:justify-end  items-end">
         <div>
           {iconLink.map((val, index) => {
             return <LinkIcon icon={val.icon} link={val.link} key={index} />
@@ -89,13 +94,13 @@ const Menubar = () => {
 
 const MenuList = ({ link, icon, name }) => {
   return (
-    <li className="list-none" key={name}>
+    <li className="flex-1 list-none mb-0" key={name}>
       <Link
-        className="py-3 px-5 font-bold text-black text-sm border-solid border-0 border-b-4 border-transparent hover:border-yellow-400"
+        className="py-4 md:py-3 flex justify-center items-center md:px-5 w-full font-bold text-black text-sm border-solid border-0 border-b-4 border-transparent hover:border-yellow-400"
         activeClassName="border-solid border-0 border-b-4 border-yellow-400"
         to={link}
       >
-        <FontAwesomeIcon icon={icon} className="text-sm lg:mr-3" />
+        <FontAwesomeIcon icon={icon} className="text-lg md:text-sm lg:mr-3" />
         <span className="hidden lg:inline">{name}</span>
       </Link>
     </li>
